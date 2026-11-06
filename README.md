@@ -26,3 +26,12 @@ python3 -m http.server 8899   # http://127.0.0.1:8899
 
 - 15 屏结构 + 右侧圆点翻页（`.page-dot` / `#current-page`）由页面自带 JS 驱动，改屏数要同步 `.pagination` 里的 dot 数量
 - 产品截图在 `assets/screens/`，来源 atlasv.com 根目录 `*-store.jpg`
+
+## 部署（线上以 AWS 为准）
+
+**线上地址：https://hr.etm.tech/careers/**
+
+- 文件同步到公司 AWS 的 `/home/ubuntu/work/careers`，由 PRIS 那台机器的 Caddy 用 `file_server` 直出。
+- 路由（一次性，已上线）：`pulse-dance` 仓库 #359 —— `caddy/Caddyfile` 的 `handle_path /careers/*` + caddy 容器只读挂载 `./careers:/srv/careers`。
+- 改内容后只要跑 `./deploy.sh`（= tar | ssh 覆盖文件 + sha256 核对），**不用重建容器、不用发 PRIS 版本**。
+- GitHub Pages（https://atlasv-hr.github.io/atlasv-careers/）保留为预览镜像，每次 push 自动更新；对外用 AWS 那个。
