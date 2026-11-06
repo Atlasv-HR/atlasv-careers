@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AtlasV 招聘 | 用 AI 把创作门槛降到零</title>
+<meta name="description" content="AtlasV 是面向全球创作者的 AI 工具公司。9 条产品线，服务 6 亿+ 全球用户，办公室在杭州、广州、新加坡。查看热招岗位。">
+<meta property="og:title" content="AtlasV 招聘 | 用 AI 把创作门槛降到零">
+<meta property="og:description" content="9 条 AI 产品线，6 亿+ 全球用户。我们在找一起把这些工具做到世界第一的人。">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/atlasv-favicon.png">
+<style>
+:root{
+  --ink:#0B1220; --ink2:#48536B; --ink3:#7B8598;
+  --line:#E7EAF1; --line2:#F0F2F7;
+  --bg:#FFFFFF; --soft:#F6F8FC;
+  --accent:#263CFF; --accent2:#EEF1FF;
+  --radius:18px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+.eyebrow{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3); font-weight:600}
+h1,h2,h3,h4{margin:0; letter-spacing:-.02em; line-height:1.25; font-weight:700}
+p{margin:0}
+.btn{display:inline-flex; align-items:center; gap:8px; height:52px; padding:0 26px; border-radius:999px;
+  background:var(--accent); color:#fff; font-size:16px; font-weight:600; transition:transform .18s ease, box-shadow .18s ease;
+  box-shadow:0 8px 24px rgba(38,60,255,.22)}
+.btn:hover{transform:translateY(-1px); box-shadow:0 12px 28px rgba(38,60,255,.3)}
+.btn.ghost{background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none}
+.btn.ghost:hover{border-color:#C9D0DE; background:#fff}
+.btn.small{height:42px; padding:0 20px; font-size:14px; box-shadow:none}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:6px}
+
+/* ---------- header ---------- */
+header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.86); backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid transparent; transition:border-color .2s}
+header.scrolled{border-bottom-color:var(--line)}
+.nav{display:flex; align-items:center; justify-content:space-between; height:70px}
+.brand{display:flex; align-items:center; gap:10px}
+.brand img{height:22px; width:auto}
+.nav-links{display:flex; gap:30px; font-size:14px; color:var(--ink2); font-weight:500}
+.nav-links a{transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative; overflow:hidden; padding:76px 0 64px}
+.hero::before{content:""; position:absolute; right:-140px; top:-160px; width:760px; height:760px; border-radius:50%;
+  background:radial-gradient(circle at 50% 50%, #EEF1FF 0%, #F6F8FF 42%, rgba(255,255,255,0) 70%); z-index:0}
+.hero .wrap{position:relative; z-index:1; display:grid; grid-template-columns:1.02fr .98fr; gap:48px; align-items:center}
+.hero h1{font-size:clamp(36px,4.4vw,60px); line-height:1.14; margin:18px 0 0; letter-spacing:-.035em}
+.hero h1 em{font-style:normal; color:var(--accent)}
+.hero .lead{margin-top:22px; font-size:17px; color:var(--ink2); max-width:520px; line-height:1.75}
+.hero .cta{display:flex; gap:12px; margin-top:34px; flex-wrap:wrap}
+.hero .tagline{margin-top:26px; font-size:13px; color:var(--ink3); display:flex; gap:16px; flex-wrap:wrap}
+.hero .tagline span{display:inline-flex; align-items:center; gap:6px}
+.dot{width:4px;height:4px;border-radius:50%;background:#C4CBDA; display:inline-block}
+
+.phones{position:relative; height:520px}
+.phones .glow{position:absolute; inset:auto 0 40px 0; height:300px; border-radius:50%;
+  background:radial-gradient(ellipse at center, rgba(38,60,255,.16), rgba(38,60,255,0) 70%); filter:blur(6px)}
+.phone{position:absolute; width:214px; border-radius:26px; overflow:hidden; background:#0B1220;
+  box-shadow:0 30px 60px -20px rgba(11,18,32,.45), 0 0 0 1px rgba(11,18,32,.06)}
+.phone img{width:100%; height:auto}
+.phone.p1{left:-2%; top:48px; transform:rotate(-7deg); z-index:1; width:200px}
+.phone.p2{left:50%; top:0; transform:translateX(-50%); z-index:3; width:222px}
+.phone.p3{right:-2%; top:60px; transform:rotate(7deg); z-index:2; width:200px}
+
+/* ---------- stats ---------- */
+.stats{border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:8px}
+.stats .wrap{display:grid; grid-template-columns:repeat(4,1fr); padding-top:34px; padding-bottom:34px}
+.stat{padding:0 26px; border-left:1px solid var(--line)}
+.stat:first-child{border-left:0; padding-left:0}
+.stat b{display:block; font-size:34px; letter-spacing:-.03em; line-height:1.1}
+.stat span{display:block; margin-top:6px; font-size:13px; color:var(--ink3)}
+
+/* ---------- generic section ---------- */
+section{padding:110px 0}
+section[id]{scroll-margin-top:78px}
+.sec-head{max-width:660px}
+.sec-head h2{font-size:clamp(28px,3.2vw,40px); margin-top:14px}
+.sec-head p{margin-top:16px; color:var(--ink2); font-size:16.5px}
+.split{display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:start}
+.body-copy p+p{margin-top:18px}
+.body-copy p{color:var(--ink2); font-size:16px; line-height:1.85}
+.body-copy strong{color:var(--ink); font-weight:600}
+
+/* ---------- products ---------- */
+#products{background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.prod-rows{margin-top:52px}
+.prod-row{display:grid; grid-template-columns:170px 1fr; gap:32px; padding:34px 0; border-top:1px solid #E3E7F0}
+.prod-row:first-child{border-top:0; padding-top:0}
+.prod-cat{position:sticky; top:96px; align-self:start}
+.prod-cat b{display:block; font-size:15px; font-weight:700; letter-spacing:-.01em}
+.prod-cat span{display:block; margin-top:6px; font-size:12.5px; color:var(--ink3)}
+.prod-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr)); gap:14px}
+.card{background:#fff; border:1px solid #E6EAF2; border-radius:var(--radius); padding:20px 22px;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s}
+.card:hover{transform:translateY(-2px); box-shadow:0 14px 30px -18px rgba(11,18,32,.28); border-color:#D5DBE8}
+.card-top{display:flex; align-items:center; gap:12px}
+.card-top img{width:42px; height:42px; border-radius:11px; flex:none}
+.card-top h3{font-size:16px; font-weight:650; letter-spacing:-.01em}
+.card-top .kind{font-size:12px; color:var(--ink3); margin-top:1px}
+.card p{margin-top:12px; font-size:13.5px; color:var(--ink2); line-height:1.65}
+.card .meta{margin-top:14px; font-size:12.5px; color:var(--ink3); display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.card .meta .star{color:#0B1220; font-weight:600}
+.card a.more{margin-left:auto; color:var(--accent); font-weight:600; font-size:12.5px}
+
+/* ---------- mission (dark) ---------- */
+#mission{background:#0B1220; color:#fff; border:0}
+#mission .eyebrow{color:#7C8CFF}
+#mission .sec-head p{color:#A8B2C7}
+.mission-big{font-size:clamp(32px,4.4vw,52px); line-height:1.2; letter-spacing:-.035em; margin-top:18px; max-width:620px}
+.mission-big span{color:#7C8CFF}
+.visions{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:56px}
+.vision{background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.09); border-radius:var(--radius); padding:26px 26px}
+.vision h4{font-size:13px; color:#8C97B0; font-weight:600; letter-spacing:.08em; text-transform:uppercase}
+.vision p{margin-top:12px; font-size:17px; line-height:1.6; letter-spacing:-.01em}
+.values{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:64px; background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.09); border-radius:var(--radius); overflow:hidden}
+.value{background:#0B1220; padding:26px 24px}
+.value .num{font-size:11px; color:#5D6880; font-weight:600; letter-spacing:.1em}
+.value h4{margin-top:12px; font-size:19px; font-weight:650}
+.value .en{font-size:12px; color:#7C8CFF; margin-top:3px; letter-spacing:.03em}
+.value p{margin-top:10px; font-size:13.5px; color:#98A3B9; line-height:1.65}
+
+/* ---------- growth / culture ---------- */
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:48px}
+.plain{background:var(--soft); border:1px solid var(--line); border-radius:var(--radius); padding:28px}
+.plain h3{font-size:17px; font-weight:650}
+.plain p{margin-top:10px; font-size:14px; color:var(--ink2); line-height:1.7}
+.plain .idx{font-size:12px; color:var(--ink3); font-weight:600; letter-spacing:.1em; display:block; margin-bottom:12px}
+.grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:20px}
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:20px}
+
+/* ---------- reward ---------- */
+#reward{background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.sub-label{display:flex; align-items:baseline; gap:14px; margin:0 0 4px}
+.sub-label h3{font-size:15px; font-weight:700; letter-spacing:-.01em}
+.sub-label span{font-size:12.5px; color:var(--ink3)}
+.block{margin-top:52px}
+.money{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:18px}
+.money .card{padding:22px}
+.money h4{font-size:16px; font-weight:650}
+.money p{margin-top:8px; font-size:13.5px; color:var(--ink2); line-height:1.6}
+.money .hl{margin-top:14px; font-size:13px; color:var(--accent); font-weight:600}
+.perks{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:18px}
+.perk{background:#fff; border:1px solid #E6EAF2; border-radius:14px; padding:18px 20px}
+.perk b{display:block; font-size:19px; letter-spacing:-.02em}
+.perk span{display:block; margin-top:2px; font-size:12.5px; color:var(--ink3)}
+.note{margin-top:22px; font-size:12.5px; color:var(--ink3); line-height:1.7}
+
+/* ---------- team + cta ---------- */
+.cta-block{margin-top:56px; background:#0B1220; color:#fff; border-radius:24px; padding:60px 56px;
+  display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; position:relative; overflow:hidden}
+.cta-block::after{content:""; position:absolute; right:-80px; bottom:-140px; width:420px; height:420px; border-radius:50%;
+  background:radial-gradient(circle, rgba(38,60,255,.5), rgba(38,60,255,0) 68%)}
+.cta-block h2{font-size:clamp(26px,3vw,36px); letter-spacing:-.03em; line-height:1.3; position:relative; z-index:1}
+.cta-block p{margin-top:12px; color:#A8B2C7; font-size:15px; position:relative; z-index:1}
+.cta-block .btn{position:relative; z-index:1; background:#fff; color:#0B1220; box-shadow:none}
+.cta-block .btn:hover{background:#EEF1FF}
+
+footer{padding:40px 0 56px; border-top:1px solid var(--line)}
+footer .wrap{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
+footer .copy{font-size:12.5px; color:var(--ink3)}
+footer .brand img{height:18px}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1; transform:none; transition:none} .phone{transition:none}}
+
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr; gap:8px}
+  .phones{height:400px; margin-top:26px}
+  .phone{width:170px; border-radius:20px}
+  .phone.p2{width:184px}
+  .split{grid-template-columns:1fr; gap:28px}
+  .prod-row{grid-template-columns:1fr; gap:18px}
+  .prod-cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .prod-cat{position:static}
+  .values{grid-template-columns:repeat(2,1fr)}
+  .grid4,.money,.perks{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  section{padding:74px 0}
+  .cta-block{padding:40px 28px}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px}
+  .hero{padding:44px 0 40px}
+  .nav .btn{display:none}
+  .hero h1{font-size:33px}
+  .hero .lead{font-size:15.5px}
+  .btn{height:50px; padding:0 22px; font-size:15px; width:100%; justify-content:center}
+  .hero .cta{flex-direction:column; align-items:stretch}
+  .phones{height:auto; padding:8px 0 4px}
+  .phones .glow{display:none}
+  .phone.p1,.phone.p3{display:none}
+  .phone.p2{position:relative; left:auto; top:0; transform:none; margin:0 auto; width:196px; border-radius:20px}
+  .stats .wrap{grid-template-columns:1fr 1fr; gap:22px 0; padding-top:26px; padding-bottom:26px}
+  .stat{padding:0 18px}
+  .stat:nth-child(odd){border-left:0; padding-left:0}
+  .stat b{font-size:27px}
+  .visions{grid-template-columns:1fr}
+  .values,.two-col,.grid3,.grid4,.money,.perks,.prod-cards{grid-template-columns:1fr}
+  .values{background:transparent; border:0; gap:1px}
+  .mission-big{font-size:29px}
+  .cta-block{border-radius:20px; padding:32px 24px}
+  footer .wrap{flex-direction:column; align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="AtlasV 首页">
+      <img src="assets/atlasv-logo.png" alt="AtlasV">
+    </a>
+    <nav class="nav-links" aria-label="页面导航">
+      <a href="#about">关于我们</a>
+      <a href="#products">产品</a>
+      <a href="#mission">价值观</a>
+      <a href="#reward">回报</a>
+      <a href="#join">岗位</a>
+    </nav>
+    <a class="btn small" href="https://cwtus1pn64.jobs.feishu.cn/index" target="_blank" rel="noopener">查看热招岗位</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">AtlasV Global · AI Tools for Global Creators</div>
+      <h1>用 AI，把创作<br>门槛降到<em>零</em></h1>
+      <p class="lead">2019 年至今，我们把 AI 视频、AI 图片和效率工具做成 10 款在营产品，服务 6 亿+ 全球用户。现在，我们在找一起把它们做到世界第一的人。</p>
+      <div class="cta">
+        <a class="btn" href="https://cwtus1pn64.jobs.feishu.cn/index" target="_blank" rel="noopener">查看热招岗位 <span aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="#products">看看我们在做什么</a>
+      </div>
+      <div class="tagline">
+        <span>杭州</span><i class="dot"></i><span>广州</span><i class="dot"></i><span>新加坡</span>
+      </div>
+    </div>
+    <div class="phones" aria-hidden="true">
+      <div class="glow"></div>
+      <div class="phone p1"><img src="assets/screens/vibedance.jpg" alt=""></div>
+      <div class="phone p2"><img src="assets/screens/shotcut.jpg" alt=""></div>
+      <div class="phone p3"><img src="assets/screens/callme.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>2019</b><span>公司成立</span></div>
+    <div class="stat"><b>6 亿+</b><span>全球用户</span></div>
+    <div class="stat"><b>150+</b><span>国家和地区</span></div>
+    <div class="stat"><b>10 款</b><span>产品在营</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap split">
+    <div class="sec-head reveal">
+      <div class="eyebrow">关于我们</div>
+      <h2>AI 创作工具出海领导者</h2>
+    </div>
+    <div class="body-copy reveal">
+      <p>AtlasV 自 2019 年起深耕海外移动端业务，把领先的 AI 能力与全球创作者的真实需求结合，做下一代 AI 创作工具。产品线覆盖 <strong>AI Video Generator、AI Photo Generator</strong> 和效率类工具，分布在 Google Play、App Store、Web 与 TikTok 多个平台，用户来自北美、拉美、欧洲、中东、亚洲和非洲的 150+ 国家和地区。</p>
+      <p>我们持续投入 AI 核心能力建设，部分模型方向已实现自研突破，关键指标达到业内领先水平，通过技术<strong>让 AI 普惠大众</strong>。</p>
+      <p>团队核心成员来自字节、腾讯、百度、网易等一线互联网公司，在<strong>杭州、广州、新加坡</strong>设有办公室。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">产品矩阵</div>
+      <h2>正在被全球创作者使用的产品</h2>
+      <p>视频、图片、效率三条线，每一款都在真实的市场里跟全世界最优秀的团队正面竞争。</p>
+    </div>
+
+    <div class="prod-rows">
+      <div class="prod-row reveal">
+        <div class="prod-cat"><b>AI + Video</b><span>剪辑 · 生成 · 录屏</span></div>
+        <div class="prod-cards">
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/vidma-cut.png" alt="Vidma Cut AI">
+              <div><h3>Vidma Cut AI</h3><div class="kind">AI 视频编辑器</div></div>
+            </div>
+            <p>把文字和照片直接变成能发的短视频，配乐、模板、剪辑一次完成。</p>
+            <div class="meta"><span class="star">★ 4.5</span><span>5000万+ 下载</span><a class="more" href="https://editor.vidma.com/" target="_blank" rel="noopener">官网 →</a></div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/shotcut.png" alt="ShotCut AI">
+              <div><h3>ShotCut AI</h3><div class="kind">专业 AI 视频剪辑</div></div>
+            </div>
+            <p>AI 字幕、自动配乐、文字成片，加上抠像、绿幕、分割合并这些硬功能。</p>
+            <div class="meta"><span class="star">★ 4.2</span><span>5000万+ 下载</span><a class="more" href="https://www.shotcut.app/" target="_blank" rel="noopener">官网 →</a></div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/vidma-record.png" alt="Vidma Record">
+              <div><h3>Vidma Record</h3><div class="kind">录屏工具</div></div>
+            </div>
+            <p>内录、悬浮控制、人脸镜头、快速剪辑，手机上的专业录屏台。</p>
+            <div class="meta"><span class="star">★ 4.5</span><span>5000万+ 下载</span><a class="more" href="https://recorder.vidma.com/" target="_blank" rel="noopener">官网 →</a></div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/vibedance.png" alt="VibeDance">
+              <div><h3>VibeDance</h3><div class="kind">AI 舞蹈视频生成</div></div>
+            </div>
+            <p>一张照片生成多段舞蹈视频，动作同步、宠物舞、宝宝舞，跟着热点走。</p>
+            <div class="meta"><span>10万+ 下载</span></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="prod-row reveal">
+        <div class="prod-cat"><b>AI + Photo</b><span>生成 · 写真 · 修复</span></div>
+        <div class="prod-cards">
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/collart.png" alt="Collart AI">
+              <div><h3>Collart AI</h3><div class="kind">AI 视频 &amp; 图片生成</div></div>
+            </div>
+            <p>文字、灵感、自拍，几秒变成有电影感的 AI 视频和图片。</p>
+            <div class="meta"><span class="star">★ 4.4</span><span>500万+ 下载</span><a class="more" href="https://collart.app/" target="_blank" rel="noopener">官网 →</a></div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/muselab.png" alt="Muselab AI">
+              <div><h3>Muselab AI</h3><div class="kind">AI 写真与头像</div></div>
+            </div>
+            <p>自拍变写真、职业头像和热门风格，修图、修复、编辑一站做完。</p>
+            <div class="meta"><span class="star">★ 4.6</span><span>100万+ 下载</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/picfix.png" alt="Pic Fix">
+              <div><h3>Pic Fix</h3><div class="kind">AI 修图增强</div></div>
+            </div>
+            <p>老照片修复、模糊变清晰、一键睁眼，人像精修和换背景都不求人。</p>
+            <div class="meta"><span class="star">★ 4.5</span><span>10万+ 下载</span></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="prod-row reveal">
+        <div class="prod-cat"><b>Business</b><span>通讯 · 扫描</span></div>
+        <div class="prod-cards">
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/textnum.png" alt="TextNum">
+              <div><h3>TextNum</h3><div class="kind">虚拟号码 · 短信与通话</div></div>
+            </div>
+            <p>一个第二号码，收发短信、WiFi 通话、低价国际长途，保护私人号码。</p>
+            <div class="meta"><span class="star">★ 4.5</span><span>100万+ 下载</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/callme.png" alt="Call Me">
+              <div><h3>Call Me</h3><div class="kind">第二号码</div></div>
+            </div>
+            <p>无限通话与短信，工作和私人分开用一个号码搞定。</p>
+            <div class="meta"><span class="star">★ 4.2</span><span>10万+ 下载</span></div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <img src="assets/products/scannerlens.png" alt="ScannerLens">
+              <div><h3>ScannerLens</h3><div class="kind">手机扫描仪</div></div>
+            </div>
+            <p>拍一下就能扫，文档扫描、格式转换、整理归档都能在手机上完成。</p>
+            <div class="meta"><a class="more" href="https://scannerlens.com/" target="_blank" rel="noopener">官网 →</a></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">我们的使命</div>
+      <div class="mission-big">予力他人<br><span>成就不凡</span></div>
+      <p style="margin-top:20px; color:#A8B2C7; font-size:16px; max-width:520px">我们相信，每个人都值得拥有更高效的工作方式和生活体验。</p>
+    </div>
+
+    <div class="visions reveal">
+      <div class="vision">
+        <h4>产品愿景</h4>
+        <p>成为提供效率产品的标杆企业，帮助人们提升效率，享受更美好的生活。</p>
+      </div>
+      <div class="vision">
+        <h4>社会愿景</h4>
+        <p>打造让全球用户受益的 AI 产品，用技术创造真实价值，让更多人享受科技带来的便利。</p>
+      </div>
+    </div>
+
+    <div class="values reveal">
+      <div class="value"><div class="num">01</div><h4>正直</h4><div class="en">Integrity</div><p>不做欺诈用户的事情，坚持做正确的事。</p></div>
+      <div class="value"><div class="num">02</div><h4>诚实</h4><div class="en">Honesty</div><p>坦诚沟通，讲真话，不回避问题。</p></div>
+      <div class="value"><div class="num">03</div><h4>说到做到</h4><div class="en">Do as Promised</div><p>对自己的承诺负责，言行一致。</p></div>
+      <div class="value"><div class="num">04</div><h4>坚韧</h4><div class="en">Perseverance</div><p>面对困难坚持目标，不抱怨，不放弃。</p></div>
+      <div class="value"><div class="num">05</div><h4>利他</h4><div class="en">Selflessness</div><p>从「我们」而不是「我」出发，他人好我们才能更好。</p></div>
+      <div class="value"><div class="num">06</div><h4>持续学习</h4><div class="en">Continuous Learning</div><p>拥抱变化，今天的最好表现是明天的最低要求。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH -->
+<section id="growth">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">成长机会</div>
+      <h2>在这里，你会获得真正的成长</h2>
+    </div>
+    <div class="grid3 reveal">
+      <div class="plain"><span class="idx">OWNERSHIP</span><h3>不是螺丝钉</h3><p>每个人都是业务负责人，从 0 到 1 把产品做出来，而不是执行需求单。</p></div>
+      <div class="plain"><span class="idx">GLOBAL</span><h3>全球化 To C 实战</h3><p>产品服务 150+ 国家和地区的用户，了解全球市场，理解不同文化下的真实需求。</p></div>
+      <div class="plain"><span class="idx">AI</span><h3>AI 产品高速迭代</h3><p>在 AI 应用层深耕，参与前沿产品的设计与开发，保持技术敏感度。</p></div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:96px">
+      <div class="eyebrow">工作方式</div>
+      <h2>高效工作，极致执行</h2>
+    </div>
+    <div class="grid4 reveal">
+      <div class="plain"><h3>用户第一</h3><p>我们为创作者创造真实价值，每个决策都回到用户价值上。</p></div>
+      <div class="plain"><h3>Ownership</h3><p>每个人都是业务负责人，不需要层层汇报，直接和业务负责人协作。</p></div>
+      <div class="plain"><h3>数据与结果导向</h3><p>用事实而不是感觉决策，用数据验证假设。</p></div>
+      <div class="plain"><h3>快速试错与迭代</h3><p>小步快跑，接受不完美，相信迭代的力量。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REWARD -->
+<section id="reward">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">激励与回报</div>
+      <h2>与创业公司成长相匹配的回报体系</h2>
+      <p>以能定薪，按绩定奖。公司赚到钱，一起分。</p>
+    </div>
+
+    <div class="block reveal">
+      <div class="sub-label"><h3>薪酬与奖金</h3><span>现金回报</span></div>
+      <div class="money">
+        <div class="card"><h4>竞争力薪酬</h4><p>以能定薪，按绩定奖。</p><div class="hl">高于市场水平</div></div>
+        <div class="card"><h4>年底双薪</h4><p>员工的基础付出有稳定回报。</p><div class="hl">13 薪</div></div>
+        <div class="card"><h4>年度奖金</h4><p>高绩效会有超额回报，上不封顶。</p><div class="hl">0～6 个月</div></div>
+        <div class="card"><h4>项目分红</h4><p>共享公司经营成果，项目赚到钱就有分成。</p><div class="hl">按项目利润分成</div></div>
+      </div>
+    </div>
+
+    <div class="block reveal">
+      <div class="sub-label"><h3>长期激励</h3><span>与公司长期共同成长</span></div>
+      <div class="grid3">
+        <div class="plain"><h3>人人有机会</h3><p>期权不是少数人的特权，每一位同学都有机会获得，关键看长期贡献。</p></div>
+        <div class="plain"><h3>四年匀速归属</h3><p>入职满一年归属 <strong>25%</strong>，逐年增加 <strong>25%</strong>，四年全部归属。</p></div>
+        <div class="plain"><h3>定期回购</h3><p>公司每年定期回购期权，让长期贡献可以真正兑现。</p></div>
+      </div>
+    </div>
+
+    <div class="block reveal">
+      <div class="sub-label"><h3>员工福利</h3><span>关注你的每一天</span></div>
+      <div class="perks">
+        <div class="perk"><b>800 元/月</b><span>餐补</span></div>
+        <div class="perk"><b>150 元/月</b><span>团建费</span></div>
+        <div class="perk"><b>2 天</b><span>带薪福利年假 · 入职即享</span></div>
+        <div class="perk"><b>10 天/年</b><span>育儿假</span></div>
+        <div class="perk"><b>补充医疗</b><span>商业保险</span></div>
+        <div class="perk"><b>每日供应</b><span>下午茶</span></div>
+        <div class="perk"><b>购物卡＋红包</b><span>节日福利</span></div>
+        <div class="perk"><b>Token 管够</b><span>拥抱 AI</span></div>
+      </div>
+      <p class="note">以上为当前执行标准，具体以入职时的制度与个人 Offer 为准。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM + JOIN -->
+<section id="join">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">团队</div>
+      <h2>和优秀的人一起做有价值的事</h2>
+    </div>
+    <div class="grid3 reveal">
+      <div class="plain"><h3>扁平高效</h3><p>直接和业务负责人协作，不需要层层汇报，决策快、执行快。</p></div>
+      <div class="plain"><h3>人才密度高</h3><p>团队来自字节、腾讯、百度、网易等一线互联网公司。</p></div>
+      <div class="plain"><h3>全球分布</h3><p>杭州、广州、新加坡三地协作，用全球化的视野做产品。</p></div>
+    </div>
+
+    <div class="cta-block reveal">
+      <div>
+        <h2>一起打造影响全球用户的产品</h2>
+        <p>让 AI 普惠大众。岗位在飞书招聘持续更新。</p>
+      </div>
+      <a class="btn" href="https://cwtus1pn64.jobs.feishu.cn/index" target="_blank" rel="noopener">查看热招岗位 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="回到顶部"><img src="assets/atlasv-logo.png" alt="AtlasV"></a>
+    <div class="copy">Copyrights <span id="year">2026</span> AtlasV Global Pte. Ltd. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.getElementById('top');
+  var onScroll=function(){ document.querySelector('header').classList.toggle('scrolled', window.scrollY>8); };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px', threshold:.08});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
